@@ -12,7 +12,7 @@ resource "aws_security_group" "main" {
   vpc_id      = var.vpc_id
 
   ingress {
-    description      = "rabbitmq"
+    description      = "RABBITMQ"
     from_port        = var.port_no
     to_port          = var.port_no
     protocol         = "tcp"
@@ -20,10 +20,10 @@ resource "aws_security_group" "main" {
   }
 
   ingress {
-    description      = "rabbitmq"
+    description      = "SSH"
     from_port        = 22
     to_port          = 22
-    protocol         = "ssh"
+    protocol         = "tcp"
     cidr_blocks      = var.bastion_cidr
   }
 
